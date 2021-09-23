@@ -3,7 +3,8 @@ import pandas as pd
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
-from sklearn.externals import joblib
+from sklearn.externals import extjoblib
+import joblib
 import pickle
 
 # load the model from disk
@@ -46,7 +47,7 @@ def predict():
 	#Alternative Usage of Saved Model
 	# joblib.dump(clf, 'NB_spam_model.pkl')
 	# NB_spam_model = open('NB_spam_model.pkl','rb')
-	# clf = joblib.load(NB_spam_model)
+	# clf = extjoblib.load(NB_spam_model)
 
 	if request.method == 'POST':
 		message = request.form['message']
